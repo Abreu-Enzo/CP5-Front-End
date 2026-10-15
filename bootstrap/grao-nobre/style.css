@@ -19,3 +19,25 @@
 .hero-placeholder {
     background: linear-gradient(135deg, #e8dcc8, #c9a774);
 }
+
+/* Avatar dos depoimentos */
+.avatar {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #c9a774, #8b5a2b);
+}
+
+/* Indicadores do carrossel em formato de bolinha */
+.carousel-dark .carousel-indicators [data-bs-target] {
+    width: 8px;
+    height: 8px;
+    margin: 0 3px;
+    border: 0;
+    border-radius: 50%;
+    background-color: #adb5bd;
+    opacity: 1;
+}
+
+.carousel-dark .carousel-indicators .active {
+    background-color: #a0652e;
+}
