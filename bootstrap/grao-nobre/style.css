@@ -41,3 +41,8 @@
 .carousel-dark .carousel-indicators .active {
     background-color: #a0652e;
 }
+
+/* Altura mínima igual para o conteúdo de todos os depoimentos */
+#carouselDepoimentos .carousel-item > div {
+    min-height: 13rem;
+}
