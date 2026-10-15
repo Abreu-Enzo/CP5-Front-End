@@ -1,0 +1,16 @@
+/* Cor da marca (marrom café) */
+.text-cafe {
+    color: #a0652e;
+}
+
+.btn-cafe {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #a0652e;
+    --bs-btn-border-color: #a0652e;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #85531f;
+    --bs-btn-hover-border-color: #85531f;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #6f4519;
+    --bs-btn-active-border-color: #6f4519;
+}
