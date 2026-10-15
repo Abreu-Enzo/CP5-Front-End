@@ -14,3 +14,8 @@
     --bs-btn-active-bg: #6f4519;
     --bs-btn-active-border-color: #6f4519;
 }
+
+/* Espaço reservado da imagem do hero (gradiente bege) */
+.hero-placeholder {
+    background: linear-gradient(135deg, #e8dcc8, #c9a774);
+}
