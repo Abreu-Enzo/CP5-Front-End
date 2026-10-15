@@ -4,20 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fio &amp; Prensa</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        creme: '#EFE6D6',
+                        areia: '#E5DAC3',
+                        musgo: '#1E4634',
+                        terracota: '#8B3A26',
+                        dourado: '#C9A46A',
+                        tinta: '#2B2A26',
+                    },
+                    fontFamily: {
+                        serif: ['Fraunces', 'serif'],
+                        sans: ['Work Sans', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
 </head>
-<body>
+<body class="bg-creme text-tinta font-sans">
 
     <!-- Cabeçalho -->
-    <header>
-        <nav>
-            <a href="#">Fio <span>&amp;</span> Prensa</a>
-            <ul>
-                <li><a href="#oficio">O ofício</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#pecas">Peças</a></li>
-                <li><a href="#contato">Contato</a></li>
+    <header class="max-w-5xl mx-auto px-6">
+        <nav class="flex items-center justify-between py-4 border-b border-tinta/20">
+            <a href="#" class="font-serif text-xl font-medium">Fio <span class="italic text-terracota">&amp;</span> Prensa</a>
+            <ul class="hidden md:flex gap-8 text-sm">
+                <li><a href="#oficio" class="hover:text-terracota">O ofício</a></li>
+                <li><a href="#servicos" class="hover:text-terracota">Serviços</a></li>
+                <li><a href="#pecas" class="hover:text-terracota">Peças</a></li>
+                <li><a href="#contato" class="hover:text-terracota">Contato</a></li>
             </ul>
-            <a href="#contato">Agendar visita</a>
+            <a href="#contato" class="bg-musgo text-creme text-sm font-semibold px-5 py-3 rounded-sm hover:bg-musgo/90">Agendar visita</a>
         </nav>
     </header>
 
