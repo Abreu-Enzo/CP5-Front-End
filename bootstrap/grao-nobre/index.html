@@ -22,7 +22,7 @@
                         <li class="nav-item"><a class="nav-link" href="#depoimentos">Depoimentos</a></li>
                         <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
                     </ul>
-                    <a class="btn btn-sm btn-cafe ms-lg-2" href="#">Comprar agora</a>
+                    <a class="btn btn-sm btn-cafe ms-lg-2" data-bs-toggle="modal" data-bs-target="#modalPedido">Comprar agora</a>
                 </div>
             </div>
         </nav>
@@ -170,6 +170,34 @@
             <p class="small text-secondary mb-0">© 2026 Grão Nobre. Marca fictícia criada para fins didáticos.</p>
         </div>
     </footer>
+
+    <div class="modal fade" id="modalPedido" tabindex="-1" aria-labelledby="modalPedidoLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalPedidoLabel">Faça seu pedido:</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body py-4">
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="pedidoKit">
+                        <label class="form-check-label" for="pedidoKit">Kit de degustação</label>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="pedido1Pacote">
+                        <label class="form-check-label" for="pedido1Pacote">1 pacote de 250g</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="pedido5Pacotes">
+                        <label class="form-check-label" for="pedido5Pacotes">5 pacotes de 250g</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Ir para o carrinho</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
