@@ -20,6 +20,8 @@
                         musgo: '#1E4634',
                         terracota: '#8B3A26',
                         dourado: '#C9A46A',
+                        palha: '#D9CAA1',
+                        caramelo: '#B4945E',
                         tinta: '#2B2A26',
                     },
                     fontFamily: {
@@ -114,22 +116,24 @@
         </section>
 
         <!-- Peças recentes -->
-        <section id="pecas">
-            <h2>Peças recentes</h2>
+        <section id="pecas" class="border-b border-tinta/20">
+            <div class="max-w-5xl mx-auto px-6 py-16">
+                <h2 class="font-serif text-3xl font-medium">Peças recentes</h2>
 
-            <div>
-                <figure>
-                    <figcaption>Caderno de campo</figcaption>
-                </figure>
-                <figure>
-                    <figcaption>Restauro 1948</figcaption>
-                </figure>
-                <figure>
-                    <figcaption>Álbum de casamento</figcaption>
-                </figure>
-                <figure>
-                    <figcaption>Edição limitada, 12 exemplares</figcaption>
-                </figure>
+                <div class="mt-8 grid gap-3 sm:grid-cols-2 md:grid-cols-4 md:grid-rows-2">
+                    <figure class="h-72 md:h-auto sm:col-span-2 md:row-span-2 flex items-end p-3 bg-gradient-to-br from-palha to-caramelo">
+                        <figcaption class="text-[10px] font-semibold uppercase tracking-wider text-tinta/60">Caderno de campo</figcaption>
+                    </figure>
+                    <figure class="h-36 flex items-end p-3 bg-gradient-to-br from-palha to-caramelo">
+                        <figcaption class="text-[10px] font-semibold uppercase tracking-wider text-tinta/60">Restauro 1948</figcaption>
+                    </figure>
+                    <figure class="h-36 flex items-end p-3 bg-gradient-to-br from-palha to-caramelo">
+                        <figcaption class="text-[10px] font-semibold uppercase tracking-wider text-tinta/60">Álbum de casamento</figcaption>
+                    </figure>
+                    <figure class="h-36 sm:col-span-2 flex items-end p-3 bg-gradient-to-br from-palha to-caramelo">
+                        <figcaption class="text-[10px] font-semibold uppercase tracking-wider text-tinta/60">Edição limitada, 12 exemplares</figcaption>
+                    </figure>
+                </div>
             </div>
         </section>
 
