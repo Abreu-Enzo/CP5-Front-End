@@ -1,0 +1,111 @@
+/* Senna — generated from tokens.json */
+:root, [data-theme="light"] {
+  --red-950: #2a0607;
+  --red-800: #6e0d11;
+  --red-700: #8f1116;
+  --red-600: #b3141b;
+  --red-500: #d71920;
+  --red-400: #ec3a2e;
+  --red-200: #f6b3a9;
+  --red-100: #fbe3df;
+  --white: #ffffff;
+  --paper-100: #f2ede4;
+  --paper-200: #e6dfd3;
+  --ink-900: #141010;
+  --ink-700: #3a3332;
+  --yellow-400: #f5c400;
+  --green-600: #00843d;
+  --surface: #f2ede4;
+  --surface-raised: #ffffff;
+  --surface-sunken: #e6dfd3;
+  --surface-inverse: #141010;
+  --brand: #d71920;
+  --brand-deep: #8f1116;
+  --brand-text: #b3141b;
+  --on-brand: #ffffff;
+  --ink: #141010;
+  --ink-muted: #5c5452;
+  --ink-inverse: #f4efe8;
+  --line: #d9d1c7;
+  --line-strong: #141010;
+  --focus: #141010;
+  --accent-gold: #f5c400;
+  --shadow-offset: 10px 10px 0 #8f1116;
+  --shadow-offset-sm: 4px 4px 0 #141010;
+}
+[data-theme="dark"] {
+  --surface: #0f0b0b;
+  --surface-raised: #1b1414;
+  --surface-sunken: #070505;
+  --surface-inverse: #f2ede4;
+  --brand: #e3262d;
+  --brand-deep: #6e0d11;
+  --brand-text: #ff5a4e;
+  --ink: #f4efe8;
+  --ink-muted: #b0a6a0;
+  --ink-inverse: #141010;
+  --line: #3a2e2c;
+  --line-strong: #f4efe8;
+  --focus: #ffffff;
+  --shadow-offset: 10px 10px 0 #2a0607;
+  --shadow-offset-sm: 4px 4px 0 #000000;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+    --surface: #0f0b0b;
+    --surface-raised: #1b1414;
+    --surface-sunken: #070505;
+    --surface-inverse: #f2ede4;
+    --brand: #e3262d;
+    --brand-deep: #6e0d11;
+    --brand-text: #ff5a4e;
+    --ink: #f4efe8;
+    --ink-muted: #b0a6a0;
+    --ink-inverse: #141010;
+    --line: #3a2e2c;
+    --line-strong: #f4efe8;
+    --focus: #ffffff;
+    --shadow-offset: 10px 10px 0 #2a0607;
+    --shadow-offset-sm: 4px 4px 0 #000000;
+} }
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  --space-40: 160px;
+  --radius-0: 0px;
+  --radius-sm: 2px;
+  --radius-pill: 999px;
+  --dur-fast: 160ms;
+  --dur-base: 320ms;
+  --dur-slow: 720ms;
+  --dur-lap: 1400ms;
+  --ease-launch: cubic-bezier(0.7, 0, 0.2, 1);
+  --ease-brake: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --angle-track: -12deg;
+  --angle-steep: -24deg;
+  --font-display: Anton, "Oswald", Impact, "Arial Narrow", sans-serif;
+  --font-serif: "Bodoni Moda", "Didot", "Times New Roman", serif;
+  --font-sans: Archivo, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Menlo, monospace;
+}
+.hero-xl { font-family: var(--font-display); font-size: 200px; line-height: 0.82; font-weight: 400; letter-spacing: -0.01em; }
+.display-l { font-family: var(--font-display); font-size: 120px; line-height: 0.86; font-weight: 400; }
+.display-m { font-family: var(--font-display); font-size: 72px; line-height: 0.9; font-weight: 400; }
+.numeral { font-family: var(--font-display); font-size: 160px; line-height: 0.8; font-weight: 400; }
+.display-s { font-family: var(--font-display); font-size: 40px; line-height: 0.95; font-weight: 400; }
+.serif-xl { font-family: var(--font-serif); font-size: 96px; line-height: 0.9; font-weight: 700; letter-spacing: -0.02em; }
+.quote { font-family: var(--font-serif); font-size: 36px; line-height: 1.2; font-weight: 400; font-style: italic; }
+.serif-body { font-family: var(--font-serif); font-size: 20px; line-height: 1.55; font-weight: 400; }
+.lead { font-family: var(--font-sans); font-size: 20px; line-height: 30px; font-weight: 400; }
+.body { font-family: var(--font-sans); font-size: 17px; line-height: 28px; font-weight: 400; }
+.small { font-family: var(--font-sans); font-size: 14px; line-height: 21px; font-weight: 400; }
+.button { font-family: var(--font-sans); font-size: 15px; line-height: 20px; font-weight: 700; letter-spacing: 0.08em; }
+.eyebrow { font-family: var(--font-sans); font-size: 12px; line-height: 16px; font-weight: 700; letter-spacing: 0.32em; }
+.data { font-family: var(--font-mono); font-size: 15px; line-height: 20px; font-weight: 500; }
+.data-l { font-family: var(--font-mono); font-size: 28px; line-height: 32px; font-weight: 700; }

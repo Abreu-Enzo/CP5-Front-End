@@ -1,0 +1,18 @@
+<!-- @dsCard group="Conteúdo" height=320 subtitle="Números da carreira, contados ao entrar na tela" -->
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:32px;background:var(--surface)">
+  <div class="sn-stat"><span class="sn-stat__num" data-to="3">0</span><span class="sn-stat__label">Títulos mundiais</span></div>
+  <div class="sn-stat"><span class="sn-stat__num" data-to="41">0</span><span class="sn-stat__label">Vitórias</span></div>
+  <div class="sn-stat"><span class="sn-stat__num" data-to="65">0</span><span class="sn-stat__label">Pole positions</span></div>
+  <div class="sn-stat" style="background:var(--brand);padding:16px;border:0"><span class="sn-stat__num" style="color:var(--on-brand)" data-to="6">0</span><span class="sn-stat__label" style="color:var(--on-brand)">Vitórias em Mônaco</span></div>
+</div>
+<script>
+const ease = t => 1 - Math.pow(1 - t, 4);
+function run() {
+  document.querySelectorAll('[data-to]').forEach(el => {
+    const to = +el.dataset.to, t0 = performance.now(), d = 1400;
+    const step = now => { const k = Math.min(1, (now - t0) / d); el.textContent = Math.round(to * ease(k)); if (k < 1) requestAnimationFrame(step); };
+    requestAnimationFrame(step);
+  });
+}
+matchMedia('(prefers-reduced-motion: reduce)').matches ? document.querySelectorAll('[data-to]').forEach(e => e.textContent = e.dataset.to) : run();
+</script>

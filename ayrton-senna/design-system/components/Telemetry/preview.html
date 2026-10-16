@@ -1,0 +1,18 @@
+<!-- @dsCard group="Conteúdo" height=200 subtitle="Painel de dados ao vivo no estilo onboard" -->
+<div style="padding:24px">
+  <div class="sn-tele" id="tele">
+    <div class="sn-tele__cell"><span class="sn-tele__k">Velocidade</span><span class="sn-tele__v"><b id="spd">0</b> <small>km/h</small></span><div class="sn-tele__bar"><i id="spdb"></i></div></div>
+    <div class="sn-tele__cell"><span class="sn-tele__k">Marcha</span><span class="sn-tele__v" id="gear">1</span><div class="sn-tele__bar"><i id="gearb"></i></div></div>
+    <div class="sn-tele__cell"><span class="sn-tele__k">Rotação</span><span class="sn-tele__v"><b id="rpm">0</b> <small>rpm</small></span><div class="sn-tele__bar"><i id="rpmb"></i></div></div>
+    <div class="sn-tele__cell"><span class="sn-tele__k">Carro</span><span class="sn-tele__v">#12</span><div class="sn-tele__bar"><i style="--v:100%"></i></div></div>
+  </div>
+</div>
+<script>
+const $ = id => document.getElementById(id); let t = 0;
+setInterval(() => {
+  t += .05; const s = Math.round(160 + 140 * (0.5 + 0.5 * Math.sin(t)));
+  const g = Math.min(6, Math.max(1, Math.ceil(s / 52))); const r = Math.round(8000 + (s % 52) / 52 * 5000);
+  $('spd').textContent = s; $('gear').textContent = g; $('rpm').textContent = r.toLocaleString('pt-BR');
+  $('spdb').style.setProperty('--v', (s / 320 * 100) + '%'); $('gearb').style.setProperty('--v', (g / 6 * 100) + '%'); $('rpmb').style.setProperty('--v', ((r - 8000) / 5000 * 100) + '%');
+}, 60);
+</script>

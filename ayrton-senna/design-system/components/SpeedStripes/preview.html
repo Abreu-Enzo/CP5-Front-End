@@ -1,0 +1,11 @@
+<!-- @dsCard group="Movimento" height=220 subtitle="Faixas diagonais de velocidade (divisor de seção)" -->
+<div class="sn-stripes" id="s" style="--sn-stripes-h:220px">
+  <div class="sn-stripes__band" style="--y:18%;--h:44px;--c:var(--brand);--d:0ms"></div>
+  <div class="sn-stripes__band" style="--y:44%;--h:14px;--c:var(--brand-deep);--d:90ms;--x:8%"></div>
+  <div class="sn-stripes__band" style="--y:58%;--h:28px;--c:var(--red-400);--d:180ms;--x:-6%"></div>
+  <div class="sn-stripes__band" style="--y:78%;--h:6px;--c:var(--ink);--d:260ms;--x:14%"></div>
+</div>
+<script>
+const s = document.getElementById('s');
+setInterval(() => { s.querySelectorAll('.sn-stripes__band').forEach(b => { b.style.animation = 'none'; b.offsetWidth; b.style.animation = ''; }); }, 3200);
+</script>

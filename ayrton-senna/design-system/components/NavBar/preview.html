@@ -1,0 +1,17 @@
+<!-- @dsCard group="Navegação" height=120 subtitle="Barra fixa com progresso de leitura" -->
+<nav class="sn-nav" id="nav" aria-label="Capítulos">
+  <a class="sn-nav__brand sn-focus" href="#">SENNA <span>#12</span></a>
+  <ul>
+    <li><a class="sn-nav__link" href="#">Origem</a></li>
+    <li><a class="sn-nav__link" href="#" aria-current="true">Carreira</a></li>
+    <li><a class="sn-nav__link" href="#">Títulos</a></li>
+    <li><a class="sn-nav__link" href="#">Números</a></li>
+    <li><a class="sn-nav__link" href="#">Legado</a></li>
+  </ul>
+  <a class="sn-btn" href="#" style="padding:10px 20px;font-size:13px">Instituto <span class="sn-arrow">→</span></a>
+  <div class="sn-nav__progress"></div>
+</nav>
+<script>
+const nav = document.getElementById('nav'); let p = 0;
+setInterval(() => { p = (p + 1) % 101; nav.style.setProperty('--sn-progress', p + '%'); }, 60);
+</script>

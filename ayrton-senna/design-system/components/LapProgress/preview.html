@@ -1,0 +1,18 @@
+<!-- @dsCard group="Navegação" height=150 subtitle="A página como uma volta: cada capítulo é um setor" -->
+<div style="padding:32px">
+  <div class="sn-lap" id="lap">
+    <div class="sn-lap__head"><span>VOLTA <strong id="n">1</strong>/5</span><span id="t">0:00.000</span></div>
+    <div class="sn-lap__track"><div class="sn-lap__fill"></div></div>
+    <div class="sn-lap__marks"><span>S1 Origem</span><span>S2 Carreira</span><span>S3 Títulos</span><span>S4 Números</span><span>S5 Legado</span></div>
+  </div>
+</div>
+<script>
+const lap = document.getElementById('lap'), n = document.getElementById('n'), t = document.getElementById('t');
+let v = 0;
+setInterval(() => {
+  v = (v + .7) % 100;
+  lap.style.setProperty('--sn-lap', v + '%');
+  n.textContent = Math.min(5, Math.floor(v / 20) + 1);
+  const ms = Math.round(v * 789.86); t.textContent = Math.floor(ms / 60000) + ':' + String(Math.floor(ms / 1000) % 60).padStart(2, '0') + '.' + String(ms % 1000).padStart(3, '0');
+}, 50);
+</script>

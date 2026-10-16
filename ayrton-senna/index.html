@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Senna · Uma volta pela história</title>
+  <meta name="description" content="Landing page em tributo a Ayrton Senna: o piloto, o McLaren MP4/4 e os marcos da carreira, de 1960 a 1994.">
+  <link rel="stylesheet" href="design-system/tokens.css">
+  <link rel="stylesheet" href="design-system/components/bundle.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip sn-btn" href="#piloto">Pular para o conteúdo</a>
+
+  <!-- ===================== 1. HEADER ===================== -->
+  <header class="site-header" id="header">
+    <nav class="sn-nav" id="nav" aria-label="Capítulos">
+      <a class="sn-nav__brand sn-focus" href="#topo">SENNA <span>#12</span></a>
+      <ul>
+        <li><a class="sn-nav__link" href="#piloto">O piloto</a></li>
+        <li><a class="sn-nav__link" href="#maquina">A máquina</a></li>
+        <li><a class="sn-nav__link" href="#carreira">Carreira</a></li>
+        <li><a class="sn-nav__link" href="#largada">Largada</a></li>
+      </ul>
+      <div class="site-header__actions">
+        <button class="sn-tag" type="button" id="theme-toggle" aria-pressed="false">Noite</button>
+        <button class="sn-btn sn-btn--outline site-header__menu-btn" type="button" id="menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
+      </div>
+      <div class="sn-nav__progress" aria-hidden="true"></div>
+    </nav>
+
+    <div class="menu" id="menu" hidden>
+      <ul>
+        <li><a href="#piloto"><span class="menu__n">01</span>O piloto</a></li>
+        <li><a href="#maquina"><span class="menu__n">02</span>A máquina</a></li>
+        <li><a href="#carreira"><span class="menu__n">03</span>Carreira</a></li>
+        <li><a href="#largada"><span class="menu__n">04</span>Largada</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== 2. HERO ===================== -->
+    <section class="hero" id="topo" aria-labelledby="hero-title">
+      <div class="hero__pin">
+        <div class="hero__stripes sn-stripes" aria-hidden="true">
+          <i class="sn-stripes__band" style="--y:91%;--h:56px;--c:var(--brand-deep);--d:0ms"></i>
+          <i class="sn-stripes__band" style="--y:97%;--h:14px;--c:var(--red-400);--d:90ms"></i>
+          <i class="sn-stripes__band" style="--y:100%;--h:5px;--c:var(--on-brand);--d:180ms"></i>
+        </div>
+
+        <div class="hero__stage">
+          <div class="hero__copy">
+            <p class="sn-eyebrow hero__eyebrow">Ayrton Senna da Silva · 1960 — 1994</p>
+            <h1 class="sn-wordmark sn-wordmark--on-brand hero__word" id="hero-title">
+              <span class="sn-wordmark__over">Ayrton</span>
+              <span class="sn-reveal"><span>Senna</span></span>
+            </h1>
+            <p class="lead">Piloto brasileiro, tricampeão mundial de Fórmula 1 em 1988, 1990 e 1991. Venceu 41 Grandes Prêmios, largou 65 vezes na pole e ganhou seis vezes em Mônaco.</p>
+            <a class="sn-btn sn-btn--ghost sn-btn--lg" href="#piloto">Começar a volta <span class="sn-arrow">→</span></a>
+            <dl class="hero__meta data" aria-label="Ficha rápida">
+              <div><dt>Nasceu</dt><dd>São Paulo · 21.03.1960</dd></div>
+              <div><dt>Carro</dt><dd>#12 · McLaren-Honda</dd></div>
+              <div><dt>Títulos</dt><dd>88 · 90 · 91</dd></div>
+            </dl>
+          </div>
+
+          <figure class="sn-photo sn-photo--duotone hero__photo" style="--sn-ratio: 4 / 5">
+            <div class="sn-photo__img" id="hero-frame">
+              <img src="assets/perfil_3.jpg" alt="Ayrton Senna de braços cruzados e óculos escuros, com o macacão vermelho e branco da McLaren." fetchpriority="high">
+            </div>
+            <figcaption><b>Senna, McLaren</b><span>Acervo do projeto</span></figcaption>
+          </figure>
+        </div>
+
+        <!-- a mesma foto, que cresce da moldura até ocupar a tela conforme a rolagem -->
+        <div class="hero__bleed" id="hero-bleed" aria-hidden="true"><img src="assets/perfil_3.jpg" alt=""></div>
+
+        <div class="hero__statement" id="hero-statement">
+          <p class="sn-eyebrow">McLaren-Honda · 1988 — 1993</p>
+          <p class="hero__statement-big"><span class="sn-reveal"><span>Três vezes</span></span><span class="sn-reveal"><span><em>campeão</em> do mundo</span></span></p>
+          <p class="data">1988 · 1990 · 1991</p>
+        </div>
+
+        <a class="hero__scroll" href="#piloto" aria-label="Rolar para o capítulo 1"><span></span></a>
+      </div>
+    </section>
+
+    <!-- transição: dois marquees cruzados -->
+    <div class="cross" aria-hidden="true">
+      <div class="sn-marquee sn-marquee--brand cross__a">
+        <div class="sn-marquee__track">
+          <span class="sn-marquee__item">Três títulos</span><span class="sn-marquee__item">41 vitórias</span><span class="sn-marquee__item">65 poles</span><span class="sn-marquee__item">Mônaco <i>seis vezes</i></span>
+          <span class="sn-marquee__item">Três títulos</span><span class="sn-marquee__item">41 vitórias</span><span class="sn-marquee__item">65 poles</span><span class="sn-marquee__item">Mônaco <i>seis vezes</i></span>
+        </div>
+      </div>
+      <div class="sn-marquee cross__b">
+        <div class="sn-marquee__track">
+          <span class="sn-marquee__item">Interlagos <i>e</i> Suzuka</span><span class="sn-marquee__item">1988</span><span class="sn-marquee__item">1990</span><span class="sn-marquee__item">1991</span>
+          <span class="sn-marquee__item">Interlagos <i>e</i> Suzuka</span><span class="sn-marquee__item">1988</span><span class="sn-marquee__item">1990</span><span class="sn-marquee__item">1991</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== 2b. O PILOTO (apresentação) ===================== -->
+    <section class="section piloto" id="piloto" aria-labelledby="piloto-title">
+      <div class="wrap">
+        <header class="sn-section-head" data-reveal>
+          <p class="sn-eyebrow">Capítulo 01 · O piloto</p>
+          <h2 id="piloto-title">
+            <span class="sn-reveal"><span>O homem por</span></span>
+            <span class="sn-reveal"><span>trás do <em>capacete</em></span></span>
+          </h2>
+        </header>
+
+        <div class="piloto__grid">
+          <div class="piloto__text" data-reveal>
+            <p class="lead">Ayrton Senna da Silva nasceu em São Paulo, em 21 de março de 1960. Correu de kart aos 13 anos e chegou à Fórmula 1 em 1984.</p>
+            <p class="serif-body">Estreou pela Toleman, passou pela Lotus e, em 1988, chegou à McLaren-Honda. Ali conquistou três títulos mundiais em quatro temporadas.</p>
+            <p class="body">Era conhecido pela volta de classificação: 65 poles em 161 largadas. Na chuva, venceu corridas que pareciam perdidas, como Estoril em 1985 e Donington em 1993.</p>
+            <p class="body">Fora da pista, deixou a ideia que virou o Instituto Ayrton Senna, dedicado à educação no Brasil.</p>
+          </div>
+
+          <div class="piloto__photos">
+            <figure class="sn-photo piloto__p1 img-reveal" style="--sn-ratio: 4 / 5" data-reveal>
+              <div class="sn-photo__img"><img src="assets/perfil_1.jpg" alt="Retrato de Ayrton Senna sorrindo, de macacão da McLaren, com o capacete amarelo apoiado no joelho." loading="lazy"></div>
+              <figcaption><b>Retrato, McLaren</b><span>Acervo do projeto</span></figcaption>
+            </figure>
+            <figure class="sn-photo sn-photo--halftone piloto__p2 img-reveal" style="--sn-ratio: 1 / 1" data-reveal>
+              <div class="sn-photo__img"><img src="assets/perfil_2.jpg" alt="Senna derrama champanhe sobre a própria cabeça no pódio." loading="lazy"></div>
+              <figcaption><b>Pódio</b><span>Acervo do projeto</span></figcaption>
+            </figure>
+            <figure class="sn-photo piloto__p3 img-reveal" style="--sn-ratio: 1 / 1" data-reveal>
+              <div class="sn-photo__img"><img src="assets/perfil_4.jpg" alt="Senna, descontraído, prova o glacê de um bolo nos boxes da McLaren." loading="lazy"></div>
+              <figcaption><b>Nos boxes</b><span>Norio Koike / ASE</span></figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="piloto__stats" id="stats">
+          <div class="sn-stat"><span class="sn-stat__num" data-to="3">0</span><span class="sn-stat__label">Títulos mundiais</span></div>
+          <div class="sn-stat sn-stat--on-brand piloto__stat-brand"><span class="sn-stat__num" data-to="41">0</span><span class="sn-stat__label">Vitórias</span></div>
+          <div class="sn-stat"><span class="sn-stat__num" data-to="65">0</span><span class="sn-stat__label">Pole positions</span></div>
+          <div class="sn-stat"><span class="sn-stat__num" data-to="80">0</span><span class="sn-stat__label">Pódios</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="sn-stripes divider" aria-hidden="true" data-stripes style="--sn-stripes-h: 180px">
+      <i class="sn-stripes__band" style="--y:20%;--h:64px;--c:var(--brand);--d:0ms"></i>
+      <i class="sn-stripes__band" style="--y:52%;--h:18px;--c:var(--brand-deep);--d:90ms"></i>
+      <i class="sn-stripes__band" style="--y:68%;--h:8px;--c:var(--red-400);--d:180ms"></i>
+      <i class="sn-stripes__band" style="--y:80%;--h:2px;--c:var(--ink);--d:270ms"></i>
+    </div>
+
+    <!-- ===================== 3. A MÁQUINA ===================== -->
+    <section class="maquina" id="maquina" aria-labelledby="maquina-title">
+      <div class="wrap maquina__intro">
+        <header class="sn-section-head" data-reveal>
+          <p class="sn-eyebrow">Capítulo 02 · McLaren MP4/4 · 1988</p>
+          <h2 id="maquina-title">
+            <span class="sn-reveal"><span>Quinze em</span></span>
+            <span class="sn-reveal"><span><em>dezesseis</em></span></span>
+          </h2>
+          <p>Em 1988, o McLaren-Honda MP4/4 venceu 15 dos 16 Grandes Prêmios. Senna levou oito dessas vitórias e o primeiro título. Role para o carro entrar no box e ser desmontado peça por peça.</p>
+        </header>
+        <figure class="sn-photo maquina__cockpit" style="--sn-ratio: 4 / 5" data-parallax="-0.08">
+          <div class="sn-photo__img"><img src="assets/perfil_5.jpg" alt="Senna no cockpit, de capacete amarelo, olhando para cima e piscando um olho." loading="lazy"></div>
+          <figcaption><b>No cockpit</b><span>Acervo do projeto</span></figcaption>
+        </figure>
+      </div>
+
+      <div class="maquina__track" id="car-track">
+        <div class="maquina__sticky">
+          <div class="maquina__bg sn-stripes" aria-hidden="true">
+            <i class="sn-stripes__band" style="--y:30%;--h:160px;--c:var(--brand-deep)"></i>
+            <i class="sn-stripes__band" style="--y:54%;--h:26px;--c:var(--brand)"></i>
+            <i class="sn-stripes__band" style="--y:62%;--h:6px;--c:var(--red-400)"></i>
+          </div>
+          <p class="maquina__year" aria-hidden="true">1988</p>
+
+          <div class="maquina__hud data">
+            <span>MP4/4 · #12</span>
+            <span id="car-status" aria-live="polite">Setor 1 · acelerando</span>
+          </div>
+
+          <div class="car" id="car" style="--k:0">
+            <div class="car__body">
+              <img class="car__base" src="assets/web/mp44-perfil.jpg" alt="McLaren-Honda MP4/4 número 12, de perfil, em movimento.">
+              <div class="car__part car__part--wing-f" data-part style="--dx:-14%;--dy:14%;--r:-8deg"><img src="assets/web/mp44-perfil.jpg" alt=""></div>
+              <div class="car__part car__part--chassis" data-part style="--dx:-6%;--dy:-24%;--r:-2deg"><img src="assets/web/mp44-perfil.jpg" alt=""></div>
+              <div class="car__part car__part--engine" data-part style="--dx:8%;--dy:-34%;--r:4deg"><img src="assets/web/mp44-perfil.jpg" alt=""></div>
+              <div class="car__part car__part--pod" data-part style="--dx:0%;--dy:32%;--r:0deg"><img src="assets/web/mp44-perfil.jpg" alt=""></div>
+              <div class="car__part car__part--wheel-f" data-part style="--dx:-12%;--dy:-6%;--r:-200deg"><img src="assets/web/mp44-perfil.jpg" alt=""></div>
+              <div class="car__part car__part--wheel-r" data-part style="--dx:10%;--dy:24%;--r:200deg"><img src="assets/web/mp44-perfil.jpg" alt=""></div>
+              <div class="car__part car__part--wing-r" data-part style="--dx:16%;--dy:-26%;--r:8deg"><img src="assets/web/mp44-perfil.jpg" alt=""></div>
+
+              <ul class="car__labels" aria-label="Peças do MP4/4">
+                <li style="--cx:12%;--cy:67.6%;--dx:-14%;--dy:14%"><b>Asa dianteira</b><span>Endplates Goodyear</span></li>
+                <li style="--cx:43%;--cy:49.6%;--dx:-6%;--dy:-24%"><b>Monocoque</b><span>Fibra de carbono · colmeia</span></li>
+                <li style="--cx:60%;--cy:49.2%;--dx:8%;--dy:-34%"><b>Motor Honda</b><span>RA168E · V6 turbo · 1.494 cm³</span></li>
+                <li style="--cx:58%;--cy:66.6%;--dx:0%;--dy:32%"><b>Sidepod</b><span>Radiadores e turbos</span></li>
+                <li style="--cx:23%;--cy:62.8%;--dx:-12%;--dy:-6%"><b>Roda dianteira</b><span>Pneu Goodyear</span></li>
+                <li style="--cx:82%;--cy:60.8%;--dx:10%;--dy:24%"><b>Roda traseira</b><span>Tração · 675 hp</span></li>
+                <li style="--cx:91%;--cy:44.6%;--dx:16%;--dy:-26%"><b>Asa traseira</b><span>Câmbio Weismann · 6 marchas</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="maquina__controls">
+            <button class="sn-btn" type="button" id="car-toggle" aria-pressed="false">Desmontar</button>
+            <p class="small">Foto: Nic Redhead, Goodwood 2014 · CC BY-SA 2.0</p>
+          </div>
+
+          <div class="sn-tele maquina__tele" aria-label="Painel de telemetria ilustrativo">
+            <div class="sn-tele__cell"><span class="sn-tele__k">Velocidade máxima</span><span class="sn-tele__v"><span id="t-speed">0</span> <small>km/h</small></span><span class="sn-tele__bar"><i id="b-speed"></i></span></div>
+            <div class="sn-tele__cell"><span class="sn-tele__k">Número de marchas</span><span class="sn-tele__v"><span id="t-gear">N</span> <small>/ 6</small></span><span class="sn-tele__bar"><i id="b-gear"></i></span></div>
+            <div class="sn-tele__cell"><span class="sn-tele__k">Rotação máxima</span><span class="sn-tele__v"><span id="t-rpm">0</span> <small>rpm</small></span><span class="sn-tele__bar"><i id="b-rpm"></i></span></div>
+          </div>
+          <p class="maquina__note small">Telemetria ilustrativa, ligada à rolagem. Não é dado histórico.</p>
+        </div>
+      </div>
+
+      <div class="wrap maquina__specs">
+        <dl class="specs">
+          <div><dt>Motor</dt><dd>Honda RA168E</dd><span>V6 turbo a 80° · 1.494 cm³</span></div>
+          <div><dt>Potência</dt><dd>675 hp</dd><span>a 12.500 rpm · pressão do turbo limitada a 2,5 bar</span></div>
+          <div><dt>Peso</dt><dd>540 kg</dd><span>Mínimo do regulamento de 1988</span></div>
+          <div><dt>Câmbio</dt><dd>6 marchas</dd><span>Weismann-McLaren, manual</span></div>
+          <div><dt>Chassi</dt><dd>Carbono</dd><span>Monocoque em colmeia · entre-eixos 2.875 mm</span></div>
+          <div><dt>1988</dt><dd>15 / 16</dd><span>Vitórias e 15 poles na temporada</span></div>
+        </dl>
+        <div class="maquina__gallery">
+          <figure class="sn-photo" style="--sn-ratio: 16 / 10">
+            <div class="sn-photo__img"><img src="assets/web/mp44-frente.jpg" alt="McLaren MP4/4 exposto, visto de frente em três quartos, com o bico branco e o número 12." loading="lazy"></div>
+            <figcaption><b>MP4/4, Goodwood</b><span>Calreyn88 · CC0</span></figcaption>
+          </figure>
+          <figure class="sn-photo sn-photo--duotone" style="--sn-ratio: 16 / 10">
+            <div class="sn-photo__img"><img src="assets/web/mp44-traseira.jpg" alt="Traseira do McLaren MP4/4 com o número 12 na asa e o motor exposto." loading="lazy"></div>
+            <figcaption><b>Traseira e motor</b><span>Hullian111 · CC BY-SA 4.0</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 4. CARREIRA (timeline) ===================== -->
+    <section class="section carreira" id="carreira" aria-labelledby="carreira-title">
+      <div class="wrap">
+        <header class="sn-section-head" data-reveal>
+          <p class="sn-eyebrow">Capítulo 03 · 1960 — 1994</p>
+          <h2 id="carreira-title">
+            <span class="sn-reveal"><span>De Interlagos</span></span>
+            <span class="sn-reveal"><span>ao <em>mundo</em></span></span>
+          </h2>
+          <p>Os marcos de uma carreira de 161 largadas na Fórmula 1, do kart em São Paulo ao tricampeonato.</p>
+        </header>
+
+        <div class="sn-lap carreira__lap" aria-hidden="true">
+          <div class="sn-lap__head"><span>Setor <strong id="lap-sector">1</strong> · <strong id="lap-year">1960</strong></span><span id="lap-time">0:00.000</span></div>
+          <div class="sn-lap__track"><div class="sn-lap__fill" id="lap-fill"></div></div>
+          <div class="sn-lap__marks"><span>1960</span><span>1977</span><span>1984</span><span>1988</span><span>1994</span></div>
+        </div>
+
+        <div class="carreira__grid">
+          <div class="carreira__media" aria-hidden="true">
+            <figure class="sn-photo sn-photo--duotone carreira__photo is-on" data-photo="infancia"><div class="sn-photo__img" style="--sn-ratio: 3 / 2"><img src="assets/web/infancia.jpg" alt="" loading="lazy"></div><figcaption><b>Infância</b><span>Instituto Ayrton Senna · CC BY 2.0</span></figcaption></figure>
+            <figure class="sn-photo carreira__photo" data-photo="chuva"><div class="sn-photo__img" style="--sn-ratio: 3 / 2"><img src="assets/web/chuva-1988.jpg" alt="" loading="lazy"></div><figcaption><b>McLaren MP4/4 na chuva, 1988</b><span>Instituto Ayrton Senna · CC BY 2.0</span></figcaption></figure>
+            <figure class="sn-photo carreira__photo" data-photo="spa89"><div class="sn-photo__img" style="--sn-ratio: 3 / 2"><img src="assets/web/spa-1989.jpg" alt="" loading="lazy"></div><figcaption><b>Spa-Francorchamps, 1989</b><span>madagascarica · CC BY 2.0</span></figcaption></figure>
+            <figure class="sn-photo carreira__photo" data-photo="mp46"><div class="sn-photo__img" style="--sn-ratio: 3 / 2"><img src="assets/web/mp46-1991.jpg" alt="" loading="lazy"></div><figcaption><b>MP4/6, Phoenix 1991</b><span>wileynorwichphoto · CC BY 2.0</span></figcaption></figure>
+            <figure class="sn-photo carreira__photo" data-photo="monaco"><div class="sn-photo__img" style="--sn-ratio: 3 / 2"><img src="assets/web/monaco-1991.jpg" alt="" loading="lazy"></div><figcaption><b>Mônaco, 1991</b><span>Jmex60 · CC BY-SA 3.0</span></figcaption></figure>
+            <figure class="sn-photo sn-photo--duotone carreira__photo" data-photo="spa91"><div class="sn-photo__img" style="--sn-ratio: 3 / 2"><img src="assets/web/spa-1991.jpg" alt="" loading="lazy"></div><figcaption><b>Spa-Francorchamps, 1991</b><span>George Voudouris · CC BY-SA 4.0</span></figcaption></figure>
+          </div>
+
+          <div class="sn-timeline" id="timeline">
+            <div class="sn-timeline__fill" aria-hidden="true"></div>
+            <article class="sn-tl-item" data-photo="infancia"><div class="sn-tl-item__year">1960</div><div><h3>Nasce em São Paulo</h3><p>Ayrton Senna da Silva nasce em 21 de março de 1960, filho de Milton e Neyde.</p></div></article>
+            <article class="sn-tl-item" data-photo="infancia"><div class="sn-tl-item__year">1973</div><div><h3>Primeira corrida de kart</h3><p>Aos 13 anos, estreia em competições de kart no kartódromo de Interlagos.</p></div></article>
+            <article class="sn-tl-item" data-photo="infancia"><div class="sn-tl-item__year">1977</div><div><h3>Campeão sul-americano</h3><p>Conquista o título sul-americano de kart. Seria vice-campeão mundial em 1979 e 1980.</p></div></article>
+            <article class="sn-tl-item" data-photo="infancia"><div class="sn-tl-item__year">1981</div><div><h3>Fórmula Ford na Inglaterra</h3><p>Muda-se para a Inglaterra e vence os campeonatos britânicos de Fórmula Ford 1600.</p></div></article>
+            <article class="sn-tl-item" data-photo="infancia"><div class="sn-tl-item__year">1983</div><div><h3>Campeão da F3 Britânica</h3><p>Leva o título na última etapa, contra Martin Brundle, e vence o primeiro GP de Macau de F3.</p></div></article>
+            <article class="sn-tl-item" data-photo="chuva"><div class="sn-tl-item__year">1984</div><div><h3>Estreia na Fórmula 1</h3><p>Corre pela Toleman. Em Mônaco, sob chuva, sai de 13º no grid e termina em segundo.</p></div></article>
+            <article class="sn-tl-item" data-photo="chuva"><div class="sn-tl-item__year">1985</div><div><h3>Primeira vitória</h3><p>Com a Lotus, vence o GP de Portugal, no Estoril, na chuva. Foi também sua primeira pole.</p></div></article>
+            <article class="sn-tl-item" data-photo="monaco"><div class="sn-tl-item__year">1987</div><div><h3>Primeira vez em Mônaco</h3><p>Vence nas ruas de Monte Carlo pela primeira vez. Seria a primeira de seis vitórias ali.</p></div></article>
+            <article class="sn-tl-item" data-photo="chuva"><div class="sn-tl-item__year">1988</div><div><h3>Campeão mundial</h3><p>Na McLaren-Honda, vence oito corridas e garante o título em Suzuka, no Japão.</p></div></article>
+            <article class="sn-tl-item" data-photo="spa89"><div class="sn-tl-item__year">1990</div><div><h3>Bicampeão</h3><p>O segundo título também é decidido em Suzuka, na penúltima etapa do ano.</p></div></article>
+            <article class="sn-tl-item" data-photo="mp46"><div class="sn-tl-item__year">1991</div><div><h3>Tricampeão</h3><p>Vence pela primeira vez no Brasil, em Interlagos, e fecha o terceiro título no Japão.</p></div></article>
+            <article class="sn-tl-item" data-photo="spa91"><div class="sn-tl-item__year">1993</div><div><h3>Donington e Mônaco</h3><p>Sob chuva em Donington, passa quatro carros na primeira volta e vence. Em Mônaco, chega à sexta vitória, recorde.</p></div></article>
+            <article class="sn-tl-item sn-tl-item--luto" data-photo="none"><div class="sn-tl-item__year">1994</div><div><h3>1º de maio, Ímola</h3><p>Morre aos 34 anos, após acidente no GP de San Marino. No mesmo ano, a família cria o Instituto Ayrton Senna.</p></div></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 5. FECHAMENTO + EASTER EGG ===================== -->
+    <section class="largada" id="largada" aria-labelledby="largada-title">
+      <div class="wrap largada__grid">
+        <div class="largada__legacy" data-reveal>
+          <p class="sn-eyebrow largada__eyebrow">Capítulo 04 · Legado</p>
+          <h2 class="largada__title" id="largada-title"><span class="sn-reveal"><span>A última</span></span><span class="sn-reveal"><span>largada</span></span></h2>
+          <blockquote class="sn-quote sn-quote--on-brand largada__quote">
+            <p lang="en">If you no longer go for a gap that exists, you are no longer a racing driver.</p>
+            <p class="small largada__trad">Se você não vai mais atrás de um espaço que existe, você não é mais um piloto de corrida.</p>
+            <footer>Ayrton Senna · entrevista a Jackie Stewart · 1990</footer>
+          </blockquote>
+        </div>
+
+        <div class="lights" id="lights" data-state="idle">
+          <p class="sn-eyebrow largada__eyebrow">Teste de reação</p>
+          <p class="lights__intro body">Cinco luzes acendem. Quando todas apagarem, largue: clique no painel ou aperte a barra de espaço.</p>
+          <button class="lights__panel" type="button" id="lights-panel" aria-describedby="lights-msg">
+            <span class="lights__row" aria-hidden="true">
+              <i class="lights__lamp"></i><i class="lights__lamp"></i><i class="lights__lamp"></i><i class="lights__lamp"></i><i class="lights__lamp"></i>
+            </span>
+            <span class="lights__clock" id="lights-clock" aria-hidden="true">0,000</span>
+            <span class="lights__cta" id="lights-cta">Ir para o grid</span>
+          </button>
+          <div class="lights__read">
+            <div><span class="sn-tele__k">Sua reação</span><span class="data-l" id="lights-time">—</span></div>
+            <div><span class="sn-tele__k">Melhor</span><span class="data-l" id="lights-best">—</span></div>
+          </div>
+          <p class="small lights__msg" id="lights-msg" aria-live="polite">Abaixo de 0,200 s, algo acontece na pista.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap site-footer__grid">
+      <div>
+        <p class="site-footer__brand">SENNA</p>
+        <p class="small">Projeto acadêmico de Front-end Design. Sem vínculo com a família, o Instituto Ayrton Senna, a McLaren ou patrocinadores.</p>
+        <p class="small site-footer__hint data">Dica de box: digite S · E · N · N · A</p>
+      </div>
+      <div>
+        <p class="sn-eyebrow">Créditos das fotos</p>
+        <ul class="small site-footer__credits">
+          <li>MP4/4 de perfil: Nic Redhead · CC BY-SA 2.0</li>
+          <li>MP4/4 de frente: Calreyn88 · CC0</li>
+          <li>MP4/4 traseira: Hullian111 · CC BY-SA 4.0</li>
+          <li>Infância e chuva 1988: Instituto Ayrton Senna · CC BY 2.0</li>
+          <li>Spa 1989: madagascarica · CC BY 2.0</li>
+          <li>Phoenix 1991: wileynorwichphoto · CC BY 2.0</li>
+          <li>Mônaco 1991: Jmex60 · CC BY-SA 3.0</li>
+          <li>Spa 1991: George Voudouris · CC BY-SA 4.0</li>
+          <li>Retratos: acervo do projeto · nos boxes: Norio Koike / ASE</li>
+        </ul>
+      </div>
+      <a class="sn-btn sn-btn--outline" href="#topo">Voltar ao topo <span class="sn-arrow">↑</span></a>
+    </div>
+  </footer>
+
+  <!-- easter egg: volta de honra -->
+  <div class="honra" id="honra" aria-hidden="true">
+    <div class="honra__band honra__band--y"></div>
+    <div class="honra__band honra__band--g"></div>
+    <figure class="sn-photo honra__car" style="--sn-ratio: 21 / 9">
+      <div class="sn-photo__img"><img src="assets/web/mp44-perfil.jpg" alt=""></div>
+    </figure>
+    <p class="honra__text"><span>Volta de</span> <em>honra</em></p>
+  </div>
+  <p class="visually-hidden" id="honra-live" aria-live="polite"></p>
+
+  <script src="script.js"></script>
+</body>
+</html>
+ci

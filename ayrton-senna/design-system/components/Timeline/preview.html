@@ -1,0 +1,19 @@
+<!-- @dsCard group="Conteúdo" height=620 subtitle="Carreira ano a ano; o trilho enche conforme a rolagem" -->
+<div style="padding:40px 32px">
+  <div class="sn-timeline" id="tl">
+    <div class="sn-timeline__fill"></div>
+    <article class="sn-tl-item"><div class="sn-tl-item__year">1984</div><div><h3>Estreia na F1</h3><p>Chega à categoria pela Toleman e, em Mônaco, sob chuva, termina em segundo.</p></div></article>
+    <article class="sn-tl-item"><div class="sn-tl-item__year">1985</div><div><h3>Primeira vitória</h3><p>Estoril, com a Lotus, debaixo de um temporal.</p></div></article>
+    <article class="sn-tl-item"><div class="sn-tl-item__year">1988</div><div><h3>Campeão do mundo</h3><p>Na McLaren, conquista o primeiro dos três títulos.</p></div></article>
+    <article class="sn-tl-item"><div class="sn-tl-item__year">1991</div><div><h3>Vitória em casa</h3><p>Vence o GP do Brasil em Interlagos.</p></div></article>
+  </div>
+</div>
+<script>
+const tl = document.getElementById('tl'), items = [...tl.querySelectorAll('.sn-tl-item')]; let i = 0;
+function step() {
+  items.forEach((el, k) => el.classList.toggle('is-active', k === i));
+  tl.style.setProperty('--sn-tl', ((i + 1) / items.length * 100) + '%');
+  i = (i + 1) % items.length;
+}
+step(); setInterval(step, 1400);
+</script>

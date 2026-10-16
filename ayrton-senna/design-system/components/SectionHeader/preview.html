@@ -1,0 +1,14 @@
+<!-- @dsCard group="Tipografia" height=340 subtitle="Eyebrow + título display com revelação" -->
+<div style="padding:40px 32px">
+  <header class="sn-section-head" id="h">
+    <span class="sn-eyebrow">Capítulo 03 · 1988</span>
+    <h2><span class="sn-reveal"><span>Primeiro</span></span><span class="sn-reveal"><span>título <em>mundial</em></span></span></h2>
+    <p>Oito vitórias numa temporada de dezesseis corridas, e a coroa decidida em Suzuka.</p>
+  </header>
+</div>
+<script>
+const h = document.getElementById('h');
+const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && h.classList.add('is-in')), { threshold: .3 });
+io.observe(h);
+setTimeout(() => h.classList.add('is-in'), 300);
+</script>

@@ -1,0 +1,20 @@
+<!-- @dsCard group="Ações" height=150 subtitle="Filtros de ano, resultado e circuito" -->
+<div style="display:grid;gap:16px;padding:24px">
+  <div style="display:flex;flex-wrap:wrap;gap:8px" role="group" aria-label="Filtrar por ano">
+    <button class="sn-tag" aria-pressed="true">1988</button>
+    <button class="sn-tag" aria-pressed="false">1990</button>
+    <button class="sn-tag" aria-pressed="false">1991</button>
+    <button class="sn-tag" aria-pressed="false">Chuva</button>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:8px">
+    <span class="sn-tag sn-tag--p1"><span class="sn-dot"></span>P1</span>
+    <span class="sn-tag sn-tag--brand">Pole position</span>
+    <span class="sn-tag sn-tag--soft">Mônaco</span>
+    <span class="sn-tag">Interlagos</span>
+  </div>
+</div>
+<script>
+document.querySelectorAll('button.sn-tag').forEach(b => b.addEventListener('click', () => {
+  b.setAttribute('aria-pressed', b.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
+}));
+</script>
