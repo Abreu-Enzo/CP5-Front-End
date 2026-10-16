@@ -214,30 +214,23 @@ body.menu-open .site-header:not(.is-solid) .sn-nav { background: transparent; }
   text-transform: uppercase; color: color-mix(in srgb, var(--ink-inverse) 72%, transparent); }
 #car-status { color: var(--red-400); }
 
-.car { --spread: 1; position: relative; justify-self: center; width: min(78vw, 1040px, calc((100vh - 460px) * 1.79)); }
-.car__body { position: relative; aspect-ratio: 1920 / 1072; background: var(--ink-900); transform: translateX(var(--drive, 0%)); }
-.car img { display: block; width: 100%; height: 100%; object-fit: cover; }
-.car__base { position: relative; filter: grayscale(calc(var(--k) * 1)) contrast(calc(1 + var(--k) * .1));
-  opacity: calc(1 - var(--k) * .8); box-shadow: var(--shadow-offset); }
-.car__part { position: absolute; inset: 0; pointer-events: none;
-  transform: translate(calc(var(--dx) * var(--k) * var(--spread)), calc(var(--dy) * var(--k) * var(--spread))) rotate(calc(var(--r) * var(--k)));
-  filter: drop-shadow(4px 4px 0 var(--red-950)); }
-/* recortes das peças, em % da foto (1920 × 1072) */
-.car__part--wing-f  { clip-path: polygon(6.1% 82.9%, 6.4% 80%, 16.2% 68.5%, 18% 67.6%, 18% 83.4%); transform-origin: 12% 76%; }
-.car__part--chassis { clip-path: polygon(29.4% 65%, 38.4% 61.6%, 43.6% 59%, 45.6% 52%, 49% 50.6%, 53.6% 49.6%, 53.6% 66.6%, 41% 66.6%, 41% 81%, 29.4% 81%); transform-origin: 41% 64%; }
-.car__part--engine  { clip-path: polygon(53.6% 49.4%, 57.8% 49.2%, 61% 54.4%, 66% 57.6%, 75.4% 60.6%, 75.4% 66.6%, 53.6% 66.6%); transform-origin: 64% 58%; }
-.car__part--pod     { clip-path: polygon(41% 66.6%, 75.4% 66.6%, 75.4% 80.6%, 41% 80.6%); transform-origin: 58% 74%; }
-.car__part--wheel-f { clip-path: ellipse(6.5% 11.7% at 23.1% 74.5%); transform-origin: 23.1% 74.5%; }
-.car__part--wheel-r { clip-path: ellipse(6.9% 12.3% at 81.8% 73.1%); transform-origin: 81.8% 73.1%; }
-.car__part--wing-r  { clip-path: polygon(83.3% 44.6%, 94.4% 44.6%, 94.4% 72.4%, 93% 75.6%, 90.4% 72.6%, 83.3% 72.6%); transform-origin: 89% 58%; }
+/* palco 3D: o canvas ocupa a faixa entre o HUD e os controles; os cards são posicionados pelo car3d.js */
+.car { position: relative; width: 100%; max-width: var(--page-max); margin: 0 auto; height: 100%; min-height: 320px; }
+.car__canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; cursor: grab; touch-action: pan-y; }
+.car__canvas:active { cursor: grabbing; }
+.car__fallback { position: relative; top: 50%; translate: 0 -50%; max-width: 960px; margin: 0 auto; }
+.car.no-webgl .car__canvas, .car.no-webgl .car__labels { display: none; }
 
 .car__labels { position: absolute; inset: 0; margin: 0; padding: 0; list-style: none; pointer-events: none; }
-.car__labels li { position: absolute; left: clamp(var(--lab-min, 4%), calc(var(--cx) + var(--dx) * var(--k) * var(--spread)), var(--lab-max, 100%)); top: calc(var(--cy) + var(--dy) * var(--k) * var(--spread));
-  translate: -50% calc(-100% - var(--space-2)); display: grid; gap: 2px; padding: var(--space-2) var(--space-3); white-space: nowrap;
-  background: var(--brand); color: var(--on-brand); box-shadow: var(--shadow-offset-sm);
-  opacity: clamp(0, calc((var(--k) - .7) * 4), 1); }
-.car__labels b { font: 400 20px/1 var(--font-display); text-transform: uppercase; letter-spacing: .02em; }
-.car__labels span { font: 500 12px/16px var(--font-mono); opacity: .86; }
+.car__labels li { position: absolute; left: 0; top: 0; display: grid; gap: 2px; padding: 6px var(--space-3); white-space: nowrap;
+  background: var(--brand); color: var(--on-brand); box-shadow: var(--shadow-offset-sm); cursor: default;
+  opacity: clamp(0, calc((var(--k) - .55) * 4), 1); pointer-events: auto; will-change: transform;
+  transition: background var(--dur-fast) var(--ease-brake), box-shadow var(--dur-fast) var(--ease-brake); }
+.car__labels li::after { content: ""; position: absolute; left: 50%; top: 100%; width: 2px; height: var(--wire, var(--space-4)); background: var(--brand); translate: -50% 0; }
+.car__labels li.is-hot { background: var(--ink-900); box-shadow: 4px 4px 0 var(--brand); z-index: 2; }
+.car__labels li.is-hot::after { background: var(--ink-900); }
+.car__labels b { font: 400 17px/1 var(--font-display); text-transform: uppercase; letter-spacing: .02em; }
+.car__labels span { font: 500 11px/14px var(--font-mono); opacity: .86; }
 
 .maquina__controls { position: relative; display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); flex-wrap: wrap;
   max-width: var(--page-max); width: 100%; margin: var(--space-4) auto; }
@@ -246,7 +239,6 @@ body.menu-open .site-header:not(.is-solid) .sn-nav { background: transparent; }
 .maquina__tele { grid-template-columns: repeat(3, 1fr); position: relative; max-width: var(--page-max); width: 100%; margin: 0 auto; border: 1px solid color-mix(in srgb, var(--ink-inverse) 18%, transparent); }
 .maquina__note { position: relative; margin: var(--space-2) auto 0; max-width: var(--page-max); width: 100%; color: color-mix(in srgb, var(--ink-inverse) 60%, transparent); }
 @media (max-width: 720px) {
-  .car { width: 96vw; --spread: .55; --lab-min: 12%; --lab-max: 88%; }
   .car__labels li { padding: var(--space-1) var(--space-2); }
   .car__labels b { font-size: 12px; }
   .maquina__hud > span:first-child { display: none; }
@@ -408,8 +400,7 @@ body.menu-open .site-header:not(.is-solid) .sn-nav { background: transparent; }
   .hero__scroll span { animation: none; }
   .maquina__track { height: auto; }
   .maquina__sticky { position: relative; height: auto; min-height: 100vh; }
-  .car__body { transform: none; }
-  .car__part, .car__labels li { transition: none; }
+  .car__labels li { transition: none; }
   .honra { display: none; }
   .theme-band { display: none; }
   ::view-transition-new(root) { animation: none; }

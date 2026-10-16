@@ -180,36 +180,30 @@
           <p class="maquina__year" aria-hidden="true">1988</p>
 
           <div class="maquina__hud data">
-            <span>MP4/4 · #12</span>
+            <span>Vista técnica · <span id="car-angle">000</span>°</span>
             <span id="car-status" aria-live="polite">Setor 1 · acelerando</span>
           </div>
 
           <div class="car" id="car" style="--k:0">
-            <div class="car__body">
-              <img class="car__base" src="assets/web/mp44-perfil.jpg" alt="McLaren-Honda MP4/4 número 12, de perfil, em movimento.">
-              <div class="car__part car__part--wing-f" data-part style="--dx:-14%;--dy:14%;--r:-8deg"><img src="assets/web/mp44-perfil.jpg" alt=""></div>
-              <div class="car__part car__part--chassis" data-part style="--dx:-6%;--dy:-24%;--r:-2deg"><img src="assets/web/mp44-perfil.jpg" alt=""></div>
-              <div class="car__part car__part--engine" data-part style="--dx:8%;--dy:-34%;--r:4deg"><img src="assets/web/mp44-perfil.jpg" alt=""></div>
-              <div class="car__part car__part--pod" data-part style="--dx:0%;--dy:32%;--r:0deg"><img src="assets/web/mp44-perfil.jpg" alt=""></div>
-              <div class="car__part car__part--wheel-f" data-part style="--dx:-12%;--dy:-6%;--r:-200deg"><img src="assets/web/mp44-perfil.jpg" alt=""></div>
-              <div class="car__part car__part--wheel-r" data-part style="--dx:10%;--dy:24%;--r:200deg"><img src="assets/web/mp44-perfil.jpg" alt=""></div>
-              <div class="car__part car__part--wing-r" data-part style="--dx:16%;--dy:-26%;--r:8deg"><img src="assets/web/mp44-perfil.jpg" alt=""></div>
-
-              <ul class="car__labels" aria-label="Peças do MP4/4">
-                <li style="--cx:12%;--cy:67.6%;--dx:-14%;--dy:14%"><b>Asa dianteira</b><span>Endplates Goodyear</span></li>
-                <li style="--cx:43%;--cy:49.6%;--dx:-6%;--dy:-24%"><b>Monocoque</b><span>Fibra de carbono · colmeia</span></li>
-                <li style="--cx:60%;--cy:49.2%;--dx:8%;--dy:-34%"><b>Motor Honda</b><span>RA168E · V6 turbo · 1.494 cm³</span></li>
-                <li style="--cx:58%;--cy:66.6%;--dx:0%;--dy:32%"><b>Sidepod</b><span>Radiadores e turbos</span></li>
-                <li style="--cx:23%;--cy:62.8%;--dx:-12%;--dy:-6%"><b>Roda dianteira</b><span>Pneu Goodyear</span></li>
-                <li style="--cx:82%;--cy:60.8%;--dx:10%;--dy:24%"><b>Roda traseira</b><span>Tração · 675 hp</span></li>
-                <li style="--cx:91%;--cy:44.6%;--dx:16%;--dy:-26%"><b>Asa traseira</b><span>Câmbio Weismann · 6 marchas</span></li>
-              </ul>
-            </div>
+            <canvas class="car__canvas" id="car-canvas" role="img" aria-label="Modelo 3D esquemático do McLaren MP4/4 de 1988, com a pintura vermelha e branca da Marlboro, que gira e se desmonta conforme a rolagem."></canvas>
+            <figure class="sn-photo car__fallback" style="--sn-ratio: 21 / 9" hidden>
+              <div class="sn-photo__img"><img src="assets/web/mp44-perfil.jpg" alt="McLaren-Honda MP4/4 número 12, de perfil, em movimento." loading="lazy"></div>
+              <figcaption><b>MP4/4, Goodwood 2014</b><span>Nic Redhead · CC BY-SA 2.0</span></figcaption>
+            </figure>
+            <ul class="car__labels" aria-label="Peças do MP4/4">
+              <li data-part="wingF"><b>Asa dianteira</b><span>Duplo plano · endplates</span></li>
+              <li data-part="chassis"><b>Monocoque</b><span>Fibra de carbono · colmeia</span></li>
+              <li data-part="engine"><b>Motor Honda</b><span>RA168E · V6 turbo · 1.494 cm³</span></li>
+              <li data-part="pod"><b>Sidepod</b><span>Radiadores e turbos</span></li>
+              <li data-part="wheelF"><b>Roda dianteira</b><span>Pneu Goodyear</span></li>
+              <li data-part="wheelR"><b>Roda traseira</b><span>Tração · 675 hp</span></li>
+              <li data-part="wingR"><b>Asa traseira</b><span>Câmbio Weismann · 6 marchas</span></li>
+            </ul>
           </div>
 
           <div class="maquina__controls">
             <button class="sn-btn" type="button" id="car-toggle" aria-pressed="false">Desmontar</button>
-            <p class="small">Foto: Nic Redhead, Goodwood 2014 · CC BY-SA 2.0</p>
+            <p class="small">Modelo 3D esquemático com a pintura de 1988. Arraste para girar; passe o mouse para destacar uma peça.</p>
           </div>
 
           <div class="sn-tele maquina__tele" aria-label="Painel de telemetria ilustrativo">
@@ -328,7 +322,7 @@
     <div class="wrap site-footer__grid">
       <div>
         <p class="site-footer__brand">SENNA</p>
-        <p class="small">Projeto acadêmico de Front-end Design. Sem vínculo com a família, o Instituto Ayrton Senna, a McLaren ou patrocinadores.</p>
+        <p class="small">Projeto acadêmico de Front-end Design. Sem vínculo com a família, o Instituto Ayrton Senna, a McLaren ou patrocinadores. Marcas citadas pertencem aos seus detentores.</p>
         <p class="small site-footer__hint data">Dica de box: digite S · E · N · N · A</p>
       </div>
       <div>
@@ -361,6 +355,9 @@
   <p class="visually-hidden" id="honra-live" aria-live="polite"></p>
 
   <script src="script.js"></script>
+  <!-- Three.js (build clássico, funciona abrindo o arquivo direto) e a cena 3D do carro -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.149.0/build/three.min.js" defer></script>
+  <script src="car3d.js" defer></script>
 </body>
 </html>
 ci

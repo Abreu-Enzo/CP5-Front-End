@@ -151,9 +151,7 @@ function updateCar() {
   if (manual !== null && Math.abs(p - lastP) > 0.03 && lastP >= 0 && !reduceMotion) manual = null; // rolou: volta ao scroll
   if (manual === null) lastP = p;
 
-  // 1) entrada em velocidade
-  const d = clamp(p / 0.2);
-  car.style.setProperty('--drive', reduceMotion ? '0%' : `${(1 - easeOut(d)) * -130}%`);
+  // 1) faixas do fundo correm com a rolagem
   carBg.style.setProperty('--sx', `${-60 + p * 70}%`);
   $$('.sn-stripes__band', carBg).forEach((b, i) => b.style.setProperty('--sx', `${-70 + p * (60 + i * 25)}%`));
 
@@ -181,6 +179,9 @@ function updateCar() {
   tele.bSpeed.style.setProperty('--v', `${(speed / TOP_SPEED) * 100}%`);
   tele.bGear.style.setProperty('--v', `${(gear / 6) * 100}%`);
   tele.bRpm.style.setProperty('--v', `${(rpm / MAX_RPM) * 100}%`);
+
+  // estado lido pela cena 3D (car3d.js) a cada quadro
+  window.sennaCar = { p, k: kShown, speed };
 
   if (kShown > 0.98) setStatus('Desmontado · 7 peças');
   else if (kShown > 0.02) setStatus('Mecânicos trabalhando');

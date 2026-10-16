@@ -11,3 +11,4 @@ Toda interface deste projeto segue o design system em `design-system/`.
 - `design-system/tokens.json` é a fonte dos valores; se mudar um token, recompile o `tokens.css`.
 - Componente novo: prefixo `sn-`, cantos vivos, ângulo `--angle-track`, e respeite `prefers-reduced-motion`.
 - Não desenhe em vetor logos de equipe ou patrocinadores, a assinatura de Senna nem as pinturas do capacete ou do carro: use só fotos licenciadas, com crédito, dentro de `.sn-photo`.
+  - **Exceção aprovada (15/10/2026):** o modelo 3D do MP4/4 em `car3d.js` leva a pintura Marlboro (chevron vermelho e branco e o nome "Marlboro"), a pedido do autor do projeto. A exceção vale só para esse modelo. Fora dele, a regra acima continua valendo. Projeto acadêmico, sem fins comerciais; a marca pertence ao seu detentor.
